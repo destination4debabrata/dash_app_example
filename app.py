@@ -684,7 +684,6 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
         'textAlign': 'center',
         'color': colors['text']
     }),
-    
     html.Div([
         dcc.Graph(figure=fig_q1, id='my-figure-q1')
     ]),
@@ -700,7 +699,6 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
         'textAlign': 'center',
         'color': colors['text']
     }),
-    
     html.Div([
         dcc.Graph(figure=fig_q2, id='my-figure-q2')
 	]),
@@ -783,7 +781,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
 	html.H4(children='Health as a function of stewardship'),
 	dcc.Graph(id='health-vs-steward'),
 	######################################################################################################################################################################
-	html.H4('Select Tree Specie'),
+	html.H2('Select Tree Specie'),
     dcc.Dropdown(
         id='specie', 
         options=[{'label': i, 'value': i} for i in species],
@@ -912,6 +910,7 @@ def update_graph(species_value,borough_value):
 @app.callback(
     Output('graph-ratio', 'figure'),
     [Input('specie', 'value')])
+
 def update_figure(selected_specie):
 
     filtered_df = tree_proportions[tree_proportions.spc_common == selected_specie]

@@ -204,7 +204,7 @@ for i in range(0,len(trace_list)):
         
 fig_q1['layout'].update(showlegend=False,height=400, width=1400, title='Proportion of Trees in Good, Fair and Poor Conditions', barmode='stack')
 
-#app = dash.Dash()
+app = dash.Dash()
 
 colors = {
     'background': '#ffffff',
@@ -275,7 +275,7 @@ for i in range(len(boroughs)):
         
 fig_q2['layout'].update(showlegend=False,height=500, width=1400, title='Proportion of Trees in Good, Fair and Poor Conditions')
 
-#app = dash.Dash()
+app = dash.Dash()
 
 colors = {
     'background': '#ffffff',
@@ -456,11 +456,11 @@ def get_tree_health_graph_data(tree="American beech"):
     }
     return [poor, fair, good]
 
-'''
+
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 server = app.server
-
+'''
 app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
 	html.H2("NYC Trees"),
     html.P(
@@ -552,10 +552,10 @@ def generate_table(dataframe,max_rows=counts.shape[0] + 1):
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-'''
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
+'''
 if __name__ == '__main__':
 	app.run_server()
 '''   
